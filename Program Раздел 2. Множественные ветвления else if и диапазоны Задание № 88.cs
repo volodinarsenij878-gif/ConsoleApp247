@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Program88
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.Write("Введите концентрацию CO2 (ppm): ");
+
+            if (double.TryParse(Console.ReadLine(), out double co2) && co2 >= 0)
+            {
+                // Проверка и вывод результата с помощью if-else
+                if (co2 < 800)
+                {
+                    string verdict = "норма";
+                    Console.WriteLine($"Вердикт: {verdict}");
+                }
+                else if (co2 <= 1200)
+                {
+                    string verdict = "душно";
+                    Console.WriteLine($"Вердикт: {verdict}");
+                }
+                else
+                {
+                    string verdict = "проветрить немедленно";
+                    Console.WriteLine($"Вердикт: {verdict}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: концентрация должна быть неотрицательной.");
+            }
+        }
+    }
+}
